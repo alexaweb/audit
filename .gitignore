@@ -1,0 +1,5 @@
+#DIRECTORIES TO IGNORE
+config/
+old/
+conf/
+scripts/
