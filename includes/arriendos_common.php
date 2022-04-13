@@ -5,4 +5,5 @@
 	$path_include = "/opt/bitnami/apps/audit/includes";
 	require_once($path_include.'/common.php');
 	require_once($path_include.'/cmiheader.php');
+	
 ?>
