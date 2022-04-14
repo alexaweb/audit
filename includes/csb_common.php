@@ -1,8 +1,9 @@
 <?php
+	require_once("../../config/config.php");
 	$dbfile = "csbDB.php";
 	$menufile = "csbmenu.php";
-	$path = "/opb/bitnami/apps/audit/htdocs/csb";
-	$path_include = "/opt/bitnami/apps/audit/includes";
+	$path = "$auditpath/htdocs/csb";
+	$path_include = "$auditpath/includes";
 	require_once($path_include.'/common.php');
 	require_once($path_include.'/cmiheader.php');
 	require_once($path_include.'/display_functions.inc');

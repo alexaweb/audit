@@ -2,7 +2,8 @@
    // First we execute our common code to connection to the database and start the session
 //    $path = $_SERVER['DOCUMENT_ROOT'];
     //require_once "/Library/WebServer/includes/".$dbfile; //cmiDB.php';
-    require_once $dbfile; //cmiDB.php';
+    require_once("../../config/config.php"); //cmiDB.php';
+    require_once("$auditconfigpath/$dbfile"); //cmiDB.php';
     date_default_timezone_set('America/Santiago');
     // These variables define the connection information for your MySQL database
 
@@ -14,7 +15,7 @@
     // See Wikipedia for more information on UTF-8:
     // http://en.wikipedia.org/wiki/UTF-8
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
-    
+
     // A try/catch statement is a common method of error handling in object oriented code.
     // First, PHP executes the code within the try block.  If at any time it encounters an
     // error while executing that code, it stops immediately and jumps down to the
@@ -37,16 +38,16 @@
         // (like your database username and password).
         die("Failed to connect to the database: " . $ex->getMessage());
     }
-    
+
     // This statement configures PDO to throw an exception when it encounters
     // an error.  This allows us to use try/catch blocks to trap database errors.
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+
     // This statement configures PDO to return database rows from your database using an associative
     // array.  This means the array will have string indexes, where the string value
     // represents the name of the column in your database.
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    
+
     // This block of code is used to undo magic quotes.  Magic quotes are a terrible
     // feature that was removed from PHP as of PHP 5.4.  However, older installations
     // of PHP may still have magic quotes enabled and this code is necessary to
@@ -68,16 +69,16 @@
                 }
             }
         }
-    
+
         undo_magic_quotes_gpc($_POST);
         undo_magic_quotes_gpc($_GET);
         undo_magic_quotes_gpc($_COOKIE);
     }
-    
+
     // This tells the web browser that your content is encoded using UTF-8
     // and that it should submit content back to you using UTF-8
     header('Content-Type: text/html; charset=utf-8');
-    
+
     // This initializes a session.  Sessions are used to store information about
     // a visitor from one web page visit to the next.  Unlike a cookie, the information is
     // stored on the server-side and cannot be modified by the visitor.  However,
@@ -88,4 +89,4 @@
 
     // Note that it is a good practice to NOT end your PHP files with a closing PHP tag.
     // This prevents trailing newlines on the file from being included in your output,
-    // which can cause problems with redirecting users. 
+    // which can cause problems with redirecting users.
