@@ -94,8 +94,8 @@
             $_SESSION['user'] = $row;
 
             // Redirect the user to the private members-only page.
-            header("Location: /audit/arriendos/display_morosos.php");
-            die("Redirecting to: /audit/arriendos/display_morosos.php");
+            header("Location: arriendos/display_morosos.php");
+            die("Redirecting to: arriendos/display_morosos.php");
         }
         else
         {
@@ -116,8 +116,8 @@
 <title>Gestión IP - Login</title>
 <link rel="icon"
   type="image/png"
-  href="/audit/css/favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="/audit/css/common_css.css" />
+  href="css/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/common_css.css" />
 </head>
 <section id="maincontent" >
 <h1>Login</h1>
@@ -130,5 +130,5 @@
     <br /><br />
     <button class="button-submit" type="submit" value="Login">login</button>
 </form>
-<a href="/audit/home/register.php">Registro de usuario</a>
+<a href="home/register.php">Registro de usuario</a>
 </section>
